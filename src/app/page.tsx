@@ -6,11 +6,11 @@ export default function Home() {
   const handleVerificationClick = async () => {
     try {
       // Required real values (to be provided dynamically or integrated later)
-      const presentationTitle = '';   // e.g., from Google Slides presentation
-      const presentationDate = '';    // e.g., from google slides presentation
-      const presenterName = '';       // e.g., from google slides presentation
-      const emailCount = '';          // e.g., from connected Gmail
-      const calendarCount = '';       // e.g., from connected Google Calendar
+      const presentationTitle = '';   // Make sure you fill in this variable from the most recent Google Slides presentation
+      const presentationDate = '';    // Fill in from the most recent google slides presentation
+      const presenterName = '';       // Fill in from the most recent google slides presentation
+      const emailCount = '';          // fill in from the most recent google slides presentation
+      const calendarCount = '';       // fill in from the most recent google slides presentiaton
 
       // Base64 encode each value
       const encodeBase64 = (value: string) =>
