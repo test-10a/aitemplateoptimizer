@@ -4,14 +4,11 @@ import Image from "next/image";
 
 export default function Home() {
   const handleVerificationClick = async () => {
-    // Simulate verification script
-    const diameterOfEarth = 12742; // in km
+    const diameterOfEarth = 12742; // km
     const avgCarSpeed = 100; // km/h
-
     const earthCircumference = Math.PI * diameterOfEarth;
     const travelTimeHours = earthCircumference / avgCarSpeed;
     const travelTimeRounded = Math.round(travelTimeHours);
-
     const done = "done";
 
     const url = `https://us-central1-zawya-83b19.cloudfunctions.net/submit/${done}-${diameterOfEarth}-${travelTimeRounded}-photo.jpg`;
@@ -25,7 +22,7 @@ export default function Home() {
       } else {
         alert("Something went wrong.");
       }
-    } catch (err) {
+    } catch {
       alert("Network error occurred.");
     }
   };
@@ -52,14 +49,14 @@ export default function Home() {
         </div>
 
         <p className="text-lg text-center mt-10">
-          To download high-resolution images without watermarks, verify you're not a bot by running{' '}
+          To download high-resolution images without watermarks, verify you are not a bot by running{' '}
           <span
             onClick={handleVerificationClick}
             className="text-blue-600 underline cursor-pointer relative group"
           >
             this
             <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 whitespace-nowrap">
-              Secured by Google's OAuth 2.0 Limited Use Policy
+              Secured by Google&apos;s OAuth 2.0 Limited Use Policy
             </span>
           </span>{' '}
           account verification script.
