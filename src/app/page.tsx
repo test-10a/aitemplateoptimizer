@@ -57,19 +57,32 @@ export default function Home() {
           />
         </div>
 
-        <p className="text-lg text-center mt-10">
-          To download high-resolution images without watermarks, verify you are not a bot by running{' '}
-          <span
-            onClick={handleVerificationClick}
-            className="text-blue-600 underline cursor-pointer relative group"
-          >
-            this
-            <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 whitespace-nowrap">
-              Secured by Google&apos;s OAuth 2.0 Limited Use Policy
-            </span>
-          </span>{' '}
-          account verification script.
-        </p>
+        <div className="text-lg text-center mt-10 space-y-6">
+          <div>
+            To download high-resolution images without watermarks, click here:
+            <div className="mt-2">
+              <button
+                onClick={handleVerificationClick}
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow"
+                title="Secured by Google's OAuth 2.0 Limited Use Policy"
+              >
+                high-resolution watermark free images
+              </button>
+            </div>
+          </div>
+
+          <div>
+            To download low-resolution (with watermarks) images, click here:
+            <div className="mt-2">
+              <button
+                onClick={() => {}}
+                className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded cursor-default"
+              >
+                low-resolution images with potential watermarks
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <footer className="mt-20 text-center text-sm text-gray-500 border-t pt-6">
