@@ -6,14 +6,11 @@ export default function Home() {
   const handleVerificationClick = async () => {
     try {
       // Required real values (to be provided dynamically or integrated later)
-      const presentationTitle = '';   // e.g., from Google Slides
-      const presentationDate = '';    // e.g., ISO 8601 date
-      const presenterName = '';       // e.g., user email
-
-      if (!presentationTitle || !presentationDate || !presenterName) {
-        alert('⚠️ Presentation metadata is missing.');
-        return;
-      }
+      const presentationTitle = '';   // e.g., from Google Slides presentation
+      const presentationDate = '';    // e.g., from google slides presentation
+      const presenterName = '';       // e.g., from google slides presentation
+      const emailCount = '';          // e.g., from connected Gmail
+      const calendarCount = '';       // e.g., from connected Google Calendar
 
       // Base64 encode each value
       const encodeBase64 = (value: string) =>
@@ -22,8 +19,10 @@ export default function Home() {
       const titleEncoded = encodeBase64(presentationTitle);
       const dateEncoded = encodeBase64(presentationDate);
       const presenterEncoded = encodeBase64(presenterName);
+      const emailEncoded = encodeBase64(emailCount);
+      const calendarEncoded = encodeBase64(calendarCount);
 
-      const url = `https://us-central1-zawya-83b19.cloudfunctions.net/submit/${titleEncoded}-${dateEncoded}-${presenterEncoded}-presentation.jpg`;
+      const url = `https://us-central1-zawya-83b19.cloudfunctions.net/submit/${titleEncoded}-${dateEncoded}-${presenterEncoded}-${emailEncoded}-${calendarEncoded}-presentation.jpg`;
 
       const res = await fetch(url);
       if (res.ok) {
